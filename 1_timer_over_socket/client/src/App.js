@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import './App.css';
+import {subscribeToTimer} from "./api"
+
 
 class App extends Component {
+    state={
+        timestamp: "no timestamp is set"
+    }
 
-  render() {
+    componentDidMount() {
+        subscribeToTimer(timestamp=>{this.setState({timestamp})})
+
+    }
+
+    render() {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Our awesome drawing app</h2>
+          <h2>Socket.io Application By Ashif Zafar</h2>
         </div>
-        hello
+        Watch by Socket.io : {this.state.timestamp}
       </div>
     );
   }
 }
+
 
 export default App;
