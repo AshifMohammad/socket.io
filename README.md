@@ -7,3 +7,4 @@
 - ###  Run `yarn` in both the directory to get the latest dependencies 
 - ###  `yarn start` to run the app
 
+## 2 - Install rethinkDB `brew update && brew install rethinkdb`
