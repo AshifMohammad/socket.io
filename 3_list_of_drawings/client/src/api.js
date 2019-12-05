@@ -1,11 +1,12 @@
 import openSocket from 'socket.io-client';
 const socket = openSocket('http://localhost:8000');
 
-function subscribeToTimer(cb) {
-  socket.on('timer', timestamp => cb(timestamp));
+export const subscribeToDrawings=(cb)=> {
+  socket.on('drawing', cb);
   socket.emit('subscribeToTimer', 1000);
 }
 
-export {
-  subscribeToTimer,
-};
+export const createDrawing = name => { console.log(name)
+  return socket.emit('createDrawing', {name})}
+
+
